@@ -6,22 +6,53 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Скорость тела - объявление переменной
-	double v;
+	int n, m, i = 3, j = 3;
 
-	// Время полёта
-	double t = 1.2;
+	cout << "At the beginning:" << endl;
+	cout << "i = " << i << endl;
+	cout << "j = " << j << endl;
+	cout << "After command n = i++ :" << endl;
+	
+	n = i++; // n = 3, i = 4
 
-	// Ускорение свободного падения
-	double g = 9.8;
+	cout << "n = " << n << endl;
+	cout << "i = " << i << endl;
+	cout << " After command m = ++j :" << endl;
 
-	// Скорость - инициализация переменной
-	v = 12.3;
+	m = ++j; // m = 4, n = 4
 
-	// Высота - динамическая инициализация переменной
-	double s = v * t - g * t * t / 2;
+	cout << "m = " << m << endl;
+	cout << "j = " << j << endl;
+	cout << " After command n = (--i) * (i--) :" << endl;
 
-	cout << "Height level is " << s << endl;
+	n = (--i) * (i--);// n = 9, i = 2
+
+	cout << "n = " << n << endl;
+	cout << "i = " << i << endl;
+	cout << " After command m = (--j) * (--j) :" << endl;
+
+	m = (--j) * (--j);// m = 4, j = 2
+
+	cout << "m = " << m << endl;
+	cout << "j = " << j << endl;
+	cout << " After command n = (--i) * (i++) :" << endl;
+
+	n = (--i) * (i++);// n = 1, i = 2
+
+	cout << "n = " << n << endl;
+	cout << "i = " << i << endl;
+	cout << " After command m = (j--) * (++j) :" << endl;
+
+	m = (j--) * (++j);// m = 9, j = 2
+
+	cout << "m = " << m << endl;
+	cout << "j = " << j << endl;
+	cout << " After command n = (--i) * (++i) :" << endl;
+
+	n = (--i) * (++i);// n = 4, i = 2
+
+	cout << "n = " << n << endl;
+	cout << "i = " << i << endl;
 
 	system("pause");
 	return 0;
