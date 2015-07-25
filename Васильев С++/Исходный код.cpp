@@ -6,11 +6,11 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int age;
+	// ќбъ€вление трЄх целочисленных переменных n, m, k:
+	int n, m, k;
 
-	cout << "How old are You?" << endl;
-	cin >> age;
-	cout << endl << "You are " << age << " years old" << endl;
+	//ќбъ€вление с одновременной инициализацией нескольских переменных:
+	int one = 1, two = 2, three, four = 4, five;
 
 	system("pause");
 	return 0;
