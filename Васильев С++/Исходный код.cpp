@@ -6,14 +6,18 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int a;
+	char x;
 
-	double x = 3.5;
+	int n = 68;
 
-	a = x;
+	int z;
+
+	x = n;
+
+	z = 'D';
 
 	cout << "x = " << x << endl;
-	cout << "a = " << a << endl;
+	cout << "z = " << z << endl;
 
 	system("pause");
 	return 0;
