@@ -6,18 +6,16 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	char x;
+	int n;
 
-	int n = 68;
+	double x;
 
-	int z;
-
-	x = n;
-
-	z = 'D';
+	cout << "Enter n = ";
+	cin >> n;
+	
+	x = n > 0 ? 5.4 : 3.2;
 
 	cout << "x = " << x << endl;
-	cout << "z = " << z << endl;
 
 	system("pause");
 	return 0;
