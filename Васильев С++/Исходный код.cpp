@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -6,25 +7,35 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Параметры задачи:
-	double S1, S2, t1, t2, V;
+	// Гравитационная постоянная:
+	const double G = 6.672E-11;
 
-	// Ввод параметров:
-	cout << "Enter S1 = ";
-	cin >> S1;
+	// Масса Земли:
+	const double M = 5.96E24;
 
-	cout << "Enter S2 = ";
-	cin >> S2;
+	// Радиус Земли:
+	const double R = 6.37E6;
 
-	cout << "Enter t1 = ";
-	cin >> t1;
+	// Число pi:
+	const double pi = 3.1415;
 
-	cout << "Enter t2 = ";
-	cin >> t2;
-	
-	V = (S1 + S2) / (t1 + t2);
+	// Период и высота орбиты:
+	double T, h;
 
-	cout << "Speed V = " << V << endl;
+	// Ввод периода (в часах):
+	cout << "Enter T (hours) = ";
+	cin >> T;
+
+	// Перевод часов в секунды:
+	T *= 3600;
+
+	// Определение высоты:
+	h = pow(G * M * T * T / 4 / pi / pi, (double) 1 / 3) - R;
+
+	// Перевод в километры:
+	h /= 1000;
+
+	cout << "Height h = " << h << " km" << endl;
 
 	system("pause");
 	return 0;
