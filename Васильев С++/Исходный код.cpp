@@ -7,35 +7,30 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Гравитационная постоянная:
-	const double G = 6.672E-11;
+	// Частота колебаний:
+	double omega = 0.2;
 
-	// Масса Земли:
-	const double M = 5.96E24;
+	// Параметры задачи:
+	double A1, t1, k;
 
-	// Радиус Земли:
-	const double R = 6.37E6;
+	// Амплитуда и начальная фаза:
+	double A, phi0;
 
-	// Число pi:
-	const double pi = 3.1415;
+	// Ввод параметров:
+	cout << "Enter t1 = ";
+	cin >> t1;
 
-	// Период и высота орбиты:
-	double T, h;
+	cout << "Enter A1 = ";
+	cin >> A1;
 
-	// Ввод периода (в часах):
-	cout << "Enter T (hours) = ";
-	cin >> T;
+	cout << "Enter k = ";
+	cin >> k;
 
-	// Перевод часов в секунды:
-	T *= 3600;
+	phi0 = asin(1/k);
 
-	// Определение высоты:
-	h = pow(G * M * T * T / 4 / pi / pi, (double) 1 / 3) - R;
+	A = A1 / sin(omega * t1 + phi0);
 
-	// Перевод в километры:
-	h /= 1000;
-
-	cout << "Height h = " << h << " km" << endl;
+	cout << "Amplitude A = " << A << endl;
 
 	system("pause");
 	return 0;
