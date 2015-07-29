@@ -7,30 +7,43 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Частота колебаний:
-	double omega = 0.2;
+	// Действительная и мнимая часть:
+	double x, y, X, Y;
 
-	// Параметры задачи:
-	double A1, t1, k;
+	// Модуль и аргумент:
+	double r, phi, R, Phi;
 
-	// Амплитуда и начальная фаза:
-	double A, phi0;
+	// Показатель степени:
+	int n;
 
 	// Ввод параметров:
-	cout << "Enter t1 = ";
-	cin >> t1;
+	cout << "Real part x = ";
+	cin >> x;
 
-	cout << "Enter A1 = ";
-	cin >> A1;
+	cout << "Imaginary part y = ";
+	cin >> y;
 
-	cout << "Enter k = ";
-	cin >> k;
+	cout << "Power n = ";
+	cin >> n;
 
-	phi0 = asin(1/k);
+	// Вычисление результата:
+	phi = atan2(y, x);
 
-	A = A1 / sin(omega * t1 + phi0);
+	r = sqrt(x * x + y * y);
 
-	cout << "Amplitude A = " << A << endl;
+	R = pow(r, n);
+
+	Phi = n * phi;
+
+	X = R * cos(Phi);
+
+	Y = R * sin(Phi);
+
+	cout << "The result is:" << endl;
+
+	cout << "Re - part " << X << endl;
+
+	cout << "Im - part " << Y << endl;
 
 	system("pause");
 	return 0;
