@@ -7,43 +7,30 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Действительная и мнимая часть:
-	double x, y, X, Y;
+	const double g = 9.8;
 
-	// Модуль и аргумент:
-	double r, phi, R, Phi;
+	// Высота:
+	double h = 78.4;
 
-	// Показатель степени:
+	// Полупериод вводимое пользователем время и координата:
+	double T, t, x;
+
+	// Количество полупериодов:
 	int n;
 
-	// Ввод параметров:
-	cout << "Real part x = ";
-	cin >> x;
+	// Ввод пользователем момента времени:
+	cout << "Enter t = ";
+	cin >> t;
 
-	cout << "Imaginary part y = ";
-	cin >> y;
+	T = sqrt(2 * h / g);
+	
+	n = (int)t / T;
 
-	cout << "Power n = ";
-	cin >> n;
+	t = n % 2 ? T - (t - n * T) : t - n * T;
 
-	// Вычисление результата:
-	phi = atan2(y, x);
+	x = h - g * t * t / 2;
 
-	r = sqrt(x * x + y * y);
-
-	R = pow(r, n);
-
-	Phi = n * phi;
-
-	X = R * cos(Phi);
-
-	Y = R * sin(Phi);
-
-	cout << "The result is:" << endl;
-
-	cout << "Re - part " << X << endl;
-
-	cout << "Im - part " << Y << endl;
+	cout << "x = " << x << " m" << endl;
 
 	system("pause");
 	return 0;
