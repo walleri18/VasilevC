@@ -7,30 +7,20 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	const double g = 9.8;
+	// Число, показатель степени и результат:
+	int number, n, result;
 
-	// Высота:
-	double h = 78.4;
+	// Ввод пользователем числа:
+	cout << "Enter number = ";
+	cin >> number;
 
-	// Полупериод вводимое пользователем время и координата:
-	double T, t, x;
+	cout << "Enter n = ";
+	cin >> n;
 
-	// Количество полупериодов:
-	int n;
+	// Результат умножения: (с помощью побитого сдвига влево)
+	result = number << n;
 
-	// Ввод пользователем момента времени:
-	cout << "Enter t = ";
-	cin >> t;
-
-	T = sqrt(2 * h / g);
-	
-	n = (int)t / T;
-
-	t = n % 2 ? T - (t - n * T) : t - n * T;
-
-	x = h - g * t * t / 2;
-
-	cout << "x = " << x << " m" << endl;
+	cout << "result = " << result << endl;
 
 	system("pause");
 	return 0;
