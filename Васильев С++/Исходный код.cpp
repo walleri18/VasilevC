@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -6,27 +7,28 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Параметры уравнения:
-	double a, b;
+	// Параметры задачи:
+	double p, p1, P, q;
+	int n;
 
-	// Логическая переменная для записи проверяемых условий:
-	bool state;
+	// Ввод параметров задачи:
+	cout << "p = ";
+	cin >> p;
 
-	// Ввод параметров уравнения:
-	cout << "a = ";
-	cin >> a;
+	// Проверка корректности значения p:
+	(p < 0 || p > 1) ? (cout << "Wrong value!" << endl, exit(0)) : cout << "p1 = ";
+	cin >> p1;
 
-	cout << "b = ";
-	cin >> b;
+	// Проверка корректности значения p1:
+	(p1 < 0 || p1 > 1) ? (cout << "Wrong value!" << endl, exit(0)) : cout << "n = ";
+	cin >> n;
 
-	cout << "x is: ";
+	// Поиск решения:
+	q = (1 - p) * (1 - p1);
 
-	// Проверка услвий и поиск решения:
-	state = (a != 0);
+	P = p * p1 * (1 - pow(q, n)) / (1 - q);
 
-	state ? (cout << b / a << endl, exit(0)) : state = (a == 0) && (b == 0);
-
-	cout << (state ? "any number!" : "no result!") << endl;
+	cout << "P = " << P << endl;
 
 	system("pause");
 	return 0;
