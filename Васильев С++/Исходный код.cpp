@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -7,20 +6,27 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Число, показатель степени и результат:
-	int number, n, result;
+	// Параметры уравнения:
+	double a, b;
 
-	// Ввод пользователем числа:
-	cout << "Enter number = ";
-	cin >> number;
+	// Логическая переменная для записи проверяемых условий:
+	bool state;
 
-	cout << "Enter n = ";
-	cin >> n;
+	// Ввод параметров уравнения:
+	cout << "a = ";
+	cin >> a;
 
-	// Результат умножения: (с помощью побитого сдвига влево)
-	result = number << n;
+	cout << "b = ";
+	cin >> b;
 
-	cout << "result = " << result << endl;
+	cout << "x is: ";
+
+	// Проверка услвий и поиск решения:
+	state = (a != 0);
+
+	state ? (cout << b / a << endl, exit(0)) : state = (a == 0) && (b == 0);
+
+	cout << (state ? "any number!" : "no result!") << endl;
 
 	system("pause");
 	return 0;
