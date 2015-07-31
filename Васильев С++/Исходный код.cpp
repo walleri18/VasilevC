@@ -7,28 +7,27 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Параметры задачи:
-	double p, p1, P, q;
-	int n;
+	// Константа силы гравитации:
+	const double g = 9.8;
 
-	// Ввод параметров задачи:
-	cout << "p = ";
-	cin >> p;
+	// Объявление и запись значения скорости:
+	double V;
 
-	// Проверка корректности значения p:
-	(p < 0 || p > 1) ? (cout << "Wrong value!" << endl, exit(0)) : cout << "p1 = ";
-	cin >> p1;
+	cout << "Enter V = ";
+	cin >> V;
 
-	// Проверка корректности значения p1:
-	(p1 < 0 || p1 > 1) ? (cout << "Wrong value!" << endl, exit(0)) : cout << "n = ";
-	cin >> n;
+	// Объявление и запись времени полёта:
+	double T;
 
-	// Поиск решения:
-	q = (1 - p) * (1 - p1);
+	cout << "Enter T = ";
+	cin >> T;
 
-	P = p * p1 * (1 - pow(q, n)) / (1 - q);
+	// Объявление и расчёт угла под которым брошено тело:
+	double alpha;
 
-	cout << "P = " << P << endl;
+	alpha = asin((g * T) / (2 * V));
+
+	cout << "Alpha = " << alpha << endl;
 
 	system("pause");
 	return 0;
