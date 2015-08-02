@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -7,33 +6,28 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// ќбъ€вление константы PI:
-	const double PI = 3.14;
+	// ќбъ€вление √равитационной константы:
+	const double G = 6.672E-11;
 
-	// ќбъ€вление и запись частоты колебани€ ма€тника:
-	double omega;
+	// ќбъ€вление константы массы «емли:
+	const double M = 5.96E24;
 
-	cout << "Enter omega = ";
-	cin >> omega;
+	// ќбъ€вление константы радиуса «емли:
+	const double R = 6.37E6;
 
-	// ќбъ€вление и запись некого k:
-	double k;
+	// ќбъ€вление и запись высоты объекта над «емлЄй:
+	double h;
 
-	cout << "Enter k = ";
-	cin >> k;
+	cout << "Enter h = ";
+	cin >> h;
 
-	// ќбъ€вление и вычисление нулевой частоты колебани€ ма€тника:
-	double phi0;
+	// ќбъ€вление и вычисление ускорени€ свободного падени€:
+	double g;
 
-	phi0 = asin(1 / k);
-
-	// ќбъ€вление и вычисление момента отклонени€ ма€тника на максимальное рассто€ние:
-	double T;
-
-	T = (PI / 2 - phi0) / omega;
+	g = (G * M) / ((R + h) * (R + h));
 
 	// ¬ывод результата:
-	cout << "T = " << T << endl;
+	cout << "g = " << g << endl;
 
 	system("pause");
 	return 0;
