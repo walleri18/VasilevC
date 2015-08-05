@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cmath>
 
 using namespace std;
 
@@ -7,39 +6,36 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// ќбъ€вление константы ускорени€ свободного падени€:
-	double g = 9.8;
+	// ќбъ€вление и ввод V1:
+	double V1;
 
-	// ќбъ€вление константы PI:
-	const double PI = 3.14;
+	cout << "Enter V1 = ";
+	cin >> V1;
 
-	// ќбъ€вление и ввод массы тела:
-	double m;
+	// ќбъ€вление и ввод V2:
+	double V2;
 
-	cout << "Enter m = ";
-	cin >> m;
+	cout << "Enter V2 = ";
+	cin >> V2;
 
-	// ќбъ€вление и ввод коэффициента трени€:
-	double k;
+	// ќбъ€вление и ввод P1:
+	double P1;
 
-	cout << "Enter k = ";
-	cin >> k;
+	cout << "Enter P1 = ";
+	cin >> P1;
 
-	// ќбъ€вление и ввод угла наклона плоскости:
-	double alpha;
+	// ќбъ€вление и ввод P2:
+	double P2;
 
-	cout << "Enter alpha = ";
-	cin >> alpha;
+	cout << "Enter P2 = ";
+	cin >> P2;
 
-	alpha = alpha * PI / 180;
+	// ќбъ€вление и расчЄт V:
+	double V;
 
-	// ќбъ€вление и расчЄт силы нат€жени€ нити:
-	double F;
+	V = (P1 * V1 - P2 * V2) / (P1 - P2);
 
-	F = (tan(alpha) < k) ? (0) : (m * g * (sin(alpha) - k * cos(alpha)));
-
-	// ¬ывод результата:
-	cout << "F = " << F << endl;
+	(V < 0) ? (cout << "Ќеккоректные значени€!!!" << endl) : (cout << "V = " << V << endl);
 
 	system("pause");
 	return 0;
