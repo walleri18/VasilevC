@@ -6,36 +6,31 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// ќбъ€вление и ввод V1:
-	double V1;
+	// ќбъ€вление посто€нной ѕланка:
+	const double h = 6.626E-34;
 
-	cout << "Enter V1 = ";
-	cin >> V1;
+	// ќбъ€вление константы массы электрона:
+	const double me = 9.1E-31;
 
-	// ќбъ€вление и ввод V2:
-	double V2;
+	// ќбъ€вление и ввод частоты:
+	double v;
 
-	cout << "Enter V2 = ";
-	cin >> V2;
+	cout << "Enter v = ";
+	cin >> v;
 
-	// ќбъ€вление и ввод P1:
-	double P1;
-
-	cout << "Enter P1 = ";
-	cin >> P1;
-
-	// ќбъ€вление и ввод P2:
-	double P2;
-
-	cout << "Enter P2 = ";
-	cin >> P2;
-
-	// ќбъ€вление и расчЄт V:
+	// ќбъ€вление и ввод скорости электрона:
 	double V;
 
-	V = (P1 * V1 - P2 * V2) / (P1 - P2);
+	cout << "Enter V = ";
+	cin >> V;
 
-	(V < 0) ? (cout << "Ќеккоректные значени€!!!" << endl) : (cout << "V = " << V << endl);
+	// ќбъ€вление и расчЄт работы выхода фотоэлектронов:
+	double A;
+
+	A = h * v - (me * V * V / 2);
+
+	// ¬ывод результата:
+	(h * v < (me * V * V / 2)) ? (cout << "¬ведЄнные данные некорректны!!!" << endl) : (cout << "A = " << A << endl);
 
 	system("pause");
 	return 0;
