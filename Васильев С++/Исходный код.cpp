@@ -7,19 +7,19 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
+	// ќбъ€вление константы ускорени€ свободного падени€:
+	double g = 9.8;
+
 	// ќбъ€вление константы PI:
 	const double PI = 3.14;
 
-	// ќбъ€вление константы ускорени€ свободного падени€:
-	const double g = 9.8;
+	// ќбъ€вление и ввод ускорени€ тела:
+	double a;
 
-	// ќбъ€вление и ввод массы тела:
-	double m;
+	cout << "Enter a = ";
+	cin >> a;
 
-	cout << "Enter m = ";
-	cin >> m;
-
-	// ќбъ€вление и ввод угла в градусах:
+	// ќбъ€вление и ввод угла наклона плоскости в градусах:
 	double alpha;
 
 	cout << "Enter alpha = ";
@@ -27,25 +27,13 @@ int main(void)
 
 	alpha = alpha * PI / 180;
 
-	// ќбъ€вление и ввод коэффициента трени€:
+	// ќбъ€вление и расчЄт коэффициента трени€:
 	double k;
 
-	cout << "Enter k = ";
-	cin >> k;
+	k = (g * sin(alpha) - a) / cos(alpha);
 
-	// ќбъ€вление и ввод приложенной силы F0;
-	double F0;
-
-	cout << "Enter F0 = ";
-	cin >> F0;
-
-	// ќбъ€вление и расчЄт ускорени€ тела:
-	double a;
-
-	a = (F0 * cos(alpha) / m) - (k * m * g * sin(alpha));
-	
 	// ¬ывод результатов:
-	cout << "a = " << a << endl;
+	cout << "k = " << k << endl;
 
 	system("pause");
 	return 0;
