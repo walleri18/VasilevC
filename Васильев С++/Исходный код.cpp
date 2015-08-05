@@ -33,13 +33,13 @@ int main(void)
 
 	alpha = alpha * PI / 180;
 
-	// Объявление и расчёт силы трения:
-	double Ft;
+	// Объявление и расчёт силы натяжения нити:
+	double F;
 
-	Ft = (k < 1) ? (k * m * g * cos(alpha)) : (m * g * sin(alpha));
+	F = (tan(alpha) < k) ? (0) : (m * g * (sin(alpha) - k * cos(alpha)));
 
 	// Вывод результата:
-	cout << "Ft = " << Ft << endl;
+	cout << "F = " << F << endl;
 
 	system("pause");
 	return 0;
