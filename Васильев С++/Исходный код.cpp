@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -6,28 +7,45 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// ќбъ€вление √равитационной константы:
-	const double G = 6.672E-11;
+	// ќбъ€вление константы PI:
+	const double PI = 3.14;
 
-	// ќбъ€вление константы массы «емли:
-	const double M = 5.96E24;
+	// ќбъ€вление константы ускорени€ свободного падени€:
+	const double g = 9.8;
 
-	// ќбъ€вление константы радиуса «емли:
-	const double R = 6.37E6;
+	// ќбъ€вление и ввод массы тела:
+	double m;
 
-	// ќбъ€вление и запись высоты объекта над «емлЄй:
-	double h;
+	cout << "Enter m = ";
+	cin >> m;
 
-	cout << "Enter h = ";
-	cin >> h;
+	// ќбъ€вление и ввод угла в градусах:
+	double alpha;
 
-	// ќбъ€вление и вычисление ускорени€ свободного падени€:
-	double g;
+	cout << "Enter alpha = ";
+	cin >> alpha;
 
-	g = (G * M) / ((R + h) * (R + h));
+	alpha = alpha * PI / 180;
 
-	// ¬ывод результата:
-	cout << "g = " << g << endl;
+	// ќбъ€вление и ввод коэффициента трени€:
+	double k;
+
+	cout << "Enter k = ";
+	cin >> k;
+
+	// ќбъ€вление и ввод приложенной силы F0;
+	double F0;
+
+	cout << "Enter F0 = ";
+	cin >> F0;
+
+	// ќбъ€вление и расчЄт ускорени€ тела:
+	double a;
+
+	a = (F0 * cos(alpha) / m) - (k * m * g * sin(alpha));
+	
+	// ¬ывод результатов:
+	cout << "a = " << a << endl;
 
 	system("pause");
 	return 0;
