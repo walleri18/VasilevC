@@ -8,12 +8,8 @@ int main(void)
 
 	int i, j;
 
-	for (i = 1; i <= 3; i++)
-	{
-		for (j = 1; j <= 5; j++) cout << 3 * (j - 1) + i << " ";
-		
-		cout << endl;
-	}
+	for (i = 10, j = 90; i < j; i += 5, j -= 10)
+		cout << i << " " << j << endl;
 
 	system("pause");
 	return 0;
