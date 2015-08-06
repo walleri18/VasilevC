@@ -6,15 +6,18 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	double x, y;
-	cout << "x = ";
-	cin >> x;
+	int n, m;
+	
+	n = rand() % 100 + 1;
 
-	cout << "y = ";
-	cin >> y;
+	cout << "Enter number m = ";
+	cin >> m;
 
-	if (y != 0) cout << "x / y = " << x / y << endl;
-	else cout << "Division by zero!" << endl;
+	cout << "n = " << n << ": ";
+	
+	if (m > n) cout << "your number is greater!" << endl;
+	else if (n > m) cout << "your number is less!" << endl;
+	else cout << "you have guessed right!" << endl;
 
 	system("pause");
 	return 0;
