@@ -11,11 +11,11 @@ int main(void)
 	cout << "Enter number n = ";
 	cin >> n;
 
-	while (i <= n)
+	do
 	{
 		s += i;
 		i++;
-	}
+	} while (i <= n);
 
 	cout << "Sum of natural numbers is: " << s << endl;
 
