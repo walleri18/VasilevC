@@ -11,13 +11,16 @@ int main(void)
 	cout << "Enter number n = ";
 	cin >> n;
 
-	do
-	{
-		s += i;
-		i++;
-	} while (i <= n);
+	// Используется метка
+mylabel:
 
-	cout << "Sum of natural numbers is: " << s << endl;
+	s += i;
+	i++;
+
+	//Команда с инструкцией безусловного перехода
+	if (i <= n) goto mylabel;
+
+	cout << "Sum of natural numbers if: " << s << endl;
 
 	system("pause");
 	return 0;
