@@ -7,36 +7,52 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// ќбъ€вление и ввод количества подводных лодок:
-	double n;
+	// ќбъ€вление константы PI:
+	const double PI = 3.14;
 
-	cout << "Enter n = ";
-	cin >> n;
+	// ќбъ€вление и ввод x:
+	double x;
 
-	// ќбъ€вление и ввод веро€тности попадани€ торпеды в авианосиц:
-	double p;
+	cout << "Enter x = ";
+	cin >> x;
 
-	cout << "Enter p = ";
-	cin >> p;
+	// ќбъ€вление и ввод y:
+	double y;
 
-	// ќбъ€вление и ввод веро€тности затоплени€ демаскированной подводной лодки коробл€ми охранени€:
-	double p1;
+	cout << "Enter y = ";
+	cin >> y;
 
-	cout << "Enter p1 = ";
-	cin >> p1;
+	// ќбъ€вление и вычисление модул€ Z:
+	double mZ;
 
-	// ќбъ€вление и расчЄт q:
-	double q;
+	mZ = sqrt(x * x + y * y);
 
-	q = (1 - p) * (1 - p1);
+	// ќбъ€вление и ввод аргумента phi:
+	double phi;
 
-	// ќбъ€вление и расчЄт вычислени€ веро€тности:
-	double P;
+	cout << "Enter phi = ";
+	cin >> phi;
 
-	P = p * (1 - p1) * ((1 - exp(n * log(q))) / (1 - q));
+	// ќбъ€вление и ввод мнимой единицы:
+	int i;
+
+	cout << "Enter i = ";
+	cin >> i;
+
+	// ќбъ€вление и вычсиление z1:
+	double z1;
+
+	z1 = sqrt(mZ) * exp(i * phi / 2);
+
+	// ќбъ€вление и вычисление z2:
+	double z2;
+
+	z2 = sqrt(mZ) * exp(i * phi / 2 + i * PI);
 
 	// ¬ывод результата:
-	cout << "P = " << P << endl;
+	cout << "Z1 = " << z1 << endl;
+
+	cout << "Z2 = " << z2 << endl;
 
 	system("pause");
 	return 0;
