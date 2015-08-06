@@ -11,9 +11,10 @@ int main(void)
 	cout << "Enter number n = ";
 	cin >> n;
 
-	for (; i <= n; i++)
+	for (; i <= n;)
 	{
 		s += i;
+		i++;
 	}
 
 	cout << "Sum of natural numbers is: " << s << endl;
