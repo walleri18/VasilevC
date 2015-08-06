@@ -8,22 +8,23 @@ int main(void)
 
 	int n;
 
-	cout << "Enter n = ";
+	cout << "Enter number from 0 to 10: ";
 	cin >> n;
 
 	switch (n)
 	{
+	case 0:
+		cout << "The number is zero!" << endl;
+		break;
 	case 1:
-		cout << "First case-block" << endl;
-		break;
 	case 2:
-		cout << "Second case-block" << endl;
-		break;
 	case 3:
-		cout << "Third case-block" << endl;
+	case 5:
+	case 8:
+		cout << "This is Fibonacci number!" << endl;
 		break;
 	default:
-		cout << "By default" << endl;
+		cout << "This is integer number!" << endl;
 	}
 
 	system("pause");
