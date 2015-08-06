@@ -6,17 +6,12 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int n, i = 1, s = 0;
+	int n, s = 0;
 
 	cout << "Enter number n = ";
 	cin >> n;
 
-	for (;;)
-	{
-		s += i;
-		i++;
-		if (i > n) break;
-	}
+	for (int i = 1; i <= n; s += i++);
 
 	cout << "Sum of natural numbers is: " << s << endl;
 
