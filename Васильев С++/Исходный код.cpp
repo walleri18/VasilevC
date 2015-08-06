@@ -6,12 +6,12 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int n, i, s = 0;
+	int n, i = 1, s = 0;
 
 	cout << "Enter number n = ";
 	cin >> n;
 
-	for (i = 0; i <= n; i++)
+	for (; i <= n; i++)
 	{
 		s += i;
 	}
