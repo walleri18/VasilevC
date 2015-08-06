@@ -6,26 +6,17 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int n;
+	int n, i, s = 0;
 
-	cout << "Enter number from 0 to 10: ";
+	cout << "Enter number n = ";
 	cin >> n;
 
-	switch (n)
+	for (i = 0; i <= n; i++)
 	{
-	case 0:
-		cout << "The number is zero!" << endl;
-		break;
-	case 1:
-	case 2:
-	case 3:
-	case 5:
-	case 8:
-		cout << "This is Fibonacci number!" << endl;
-		break;
-	default:
-		cout << "This is integer number!" << endl;
+		s += i;
 	}
+
+	cout << "Sum of natural numbers is: " << s << endl;
 
 	system("pause");
 	return 0;
