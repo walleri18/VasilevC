@@ -1,34 +1,56 @@
 #include <iostream>
+#include <cmath>
+
 
 using namespace std;
-
-// Граница ряда:
-const int N = 100;
 
 int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Аргумент функции и "рабочие" переменные:
-	double x, q, s = 0;
+	// Ускорение свободного падения и число pi:
+	const double g = 9.8, pi = 3.1415;
 
-	// Индексная переменная:
-	int n;
+	// Шаг дискретности по времени:
+	double dt = 0.0001;
 
-	cout << "Enter x = ";
-	cin >> x;
+	// Рабочие переменные:
+	double V, alpha, t, v, u, x = 0, y = 0;
 
-	q = x;
+	int n = 0;
 
-	// Вычисление синуса:
-	for (n = 1; n <= N; n++)
+	// Ввод параметров задачи:
+	cout << "Enter V = ";
+	cin >> V;
+
+	cout << "Enter alpha = ";
+	cin >> alpha;
+
+	// Перевод градусов в радианы:
+	alpha = alpha * pi / 180;
+
+	cout << "Enter t = ";
+	cin >> t;
+
+	// Начальная скорость (проекции):
+	v = V * cos(alpha);
+
+	u = V * sin(alpha);
+
+	// Вычисление координат тела:
+	do
 	{
-		s += q;
-		q *= (-1) * x * x / (2 * n) / (2 * n + 1);
-	}
+		n++;
+		y += u * dt;
+		x += v * dt;
+		u -= g * dt;
+	} while ((y > 0) && (n * dt < t));
 
-	// Результат:
-	cout << "sin(" << x << ") = " << s << endl;
+	// Вывод результатов с учётом конечности времени полёта:
+	cout << "y = " << y << " : ";
+	cout << (t < sqrt(2 * V * sin(alpha) / g) ? (V * sin(alpha) * t - g * t * t / 2) : 0) << endl;
+	cout << "x = " << x << " : ";
+	cout << (t < sqrt(2 * V * sin(alpha) / g) ? (V * cos(alpha) * t) : (V * V * sin(2 * alpha) / g)) << endl;
 
 	system("pause");
 	return 0;
