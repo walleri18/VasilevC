@@ -8,49 +8,27 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Ускорение свободного падения и число pi:
-	const double g = 9.8, pi = 3.1415;
+	// Корень уравнения:
+	double x;
 
-	// Шаг дискретности по времени:
-	double dt = 0.0001;
+	// Количество итераций и индексная переменная:
+	int n = 100, i;
 
-	// Рабочие переменные:
-	double V, alpha, t, v, u, x = 0, y = 0;
+	// Вычисление корня x = 2:
+	x = 0;
 
-	int n = 0;
+	for (i = 1; i <= n; i++)
+		x = (x * x + 6) / 5;
 
-	// Ввод параметров задачи:
-	cout << "Enter V = ";
-	cin >> V;
+	cout << "x = " << x << endl;
 
-	cout << "Enter alpha = ";
-	cin >> alpha;
+	// Вычисление корня x = 3:
+	x = 5;
 
-	// Перевод градусов в радианы:
-	alpha = alpha * pi / 180;
-
-	cout << "Enter t = ";
-	cin >> t;
-
-	// Начальная скорость (проекции):
-	v = V * cos(alpha);
-
-	u = V * sin(alpha);
-
-	// Вычисление координат тела:
-	do
-	{
-		n++;
-		y += u * dt;
-		x += v * dt;
-		u -= g * dt;
-	} while ((y > 0) && (n * dt < t));
-
-	// Вывод результатов с учётом конечности времени полёта:
-	cout << "y = " << y << " : ";
-	cout << (t < sqrt(2 * V * sin(alpha) / g) ? (V * sin(alpha) * t - g * t * t / 2) : 0) << endl;
-	cout << "x = " << x << " : ";
-	cout << (t < sqrt(2 * V * sin(alpha) / g) ? (V * cos(alpha) * t) : (V * V * sin(2 * alpha) / g)) << endl;
+	for (i = 1; i <= n; i++)
+		x = sqrt(5 * x - 6);
+	
+	cout << "x = " << x << endl;
 
 	system("pause");
 	return 0;
