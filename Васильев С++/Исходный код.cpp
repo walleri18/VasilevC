@@ -6,18 +6,25 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int n, m;
-	
-	n = rand() % 100 + 1;
+	int n;
 
-	cout << "Enter number m = ";
-	cin >> m;
+	cout << "Enter n = ";
+	cin >> n;
 
-	cout << "n = " << n << ": ";
-	
-	if (m > n) cout << "your number is greater!" << endl;
-	else if (n > m) cout << "your number is less!" << endl;
-	else cout << "you have guessed right!" << endl;
+	switch (n)
+	{
+	case 1:
+		cout << "First case-block" << endl;
+		break;
+	case 2:
+		cout << "Second case-block" << endl;
+		break;
+	case 3:
+		cout << "Third case-block" << endl;
+		break;
+	default:
+		cout << "By default" << endl;
+	}
 
 	system("pause");
 	return 0;
