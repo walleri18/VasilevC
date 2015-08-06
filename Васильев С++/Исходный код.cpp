@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cmath>
-
 
 using namespace std;
 
@@ -8,27 +6,53 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Корень уравнения:
-	double x;
+	// Переменные для записи результата
+	// вычислений и вводимого числа:
+	double x, s;
 
-	// Количество итераций и индексная переменная:
-	int n = 100, i;
+	// Переменная для записи символа операции:
+	char op;
 
-	// Вычисление корня x = 2:
-	x = 0;
+	// Ввод первого числа:
+	cout << ">> ";
+	cin >> x;
 
-	for (i = 1; i <= n; i++)
-		x = (x * x + 6) / 5;
+	s = x;
 
-	cout << "x = " << x << endl;
+	// Оператор цикла для вычисления результата:
+	while (true)
+	{
+		// Считывание символа операции:
+		cout << ">> ";
+		cin >> op;
 
-	// Вычисление корня x = 3:
-	x = 5;
+		// Команда выхода из оператора цикла:
+		if (op == '=') {
+			cout << "---> " << s << endl;
+			system("pause");
+			exit(0);
+		}
 
-	for (i = 1; i <= n; i++)
-		x = sqrt(5 * x - 6);
-	
-	cout << "x = " << x << endl;
+		// Ввод числа:
+		cout << ">> ";
+		cin >> x;
+
+		// Обработка символа операции:
+		switch (op)
+		{
+		case '+':
+			s += x;
+			break;
+		case '-':
+			s -= x;
+			break;
+		case '*':
+			s *= x;
+			break;
+		case '/':
+			s /= x;
+		}
+	}
 
 	system("pause");
 	return 0;
