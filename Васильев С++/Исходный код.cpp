@@ -6,13 +6,14 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	for (char x = 'a'; x != 'z';)
-	{
-		cout << "Guess a symbol: ";
-		cin >> x;
-	}
+	int i, j;
 
-	cout << "Correct!" << endl;
+	for (i = 1; i <= 3; i++)
+	{
+		for (j = 1; j <= 5; j++) cout << 3 * (j - 1) + i << " ";
+		
+		cout << endl;
+	}
 
 	system("pause");
 	return 0;
