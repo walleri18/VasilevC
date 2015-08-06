@@ -2,25 +2,33 @@
 
 using namespace std;
 
+// Граница ряда:
+const int N = 100;
+
 int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	int n, i = 1, s = 0;
+	// Аргумент функции и "рабочие" переменные:
+	double x, q, s = 0;
 
-	cout << "Enter number n = ";
-	cin >> n;
+	// Индексная переменная:
+	int n;
 
-	// Используется метка
-mylabel:
+	cout << "Enter x = ";
+	cin >> x;
 
-	s += i;
-	i++;
+	q = x;
 
-	//Команда с инструкцией безусловного перехода
-	if (i <= n) goto mylabel;
+	// Вычисление синуса:
+	for (n = 1; n <= N; n++)
+	{
+		s += q;
+		q *= (-1) * x * x / (2 * n) / (2 * n + 1);
+	}
 
-	cout << "Sum of natural numbers if: " << s << endl;
+	// Результат:
+	cout << "sin(" << x << ") = " << s << endl;
 
 	system("pause");
 	return 0;
