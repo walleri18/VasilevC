@@ -7,48 +7,21 @@ int main(void)
 {
 	setlocale(LC_ALL, "rus");
 
-	// Число pi:
-	const double pi = 3.1415;
+	// Объявление константы PI:
+	const double PI = 3.1415;
 
-	// Рабочие переменные программы:
-	double R, H, V, V0, x, y, z;
+	// Объявление и ввод аргумента x:
+	double x;
 
-	// Число точек N (по каждой из координат)
-	// и число внутренних точек n:
-	int N = 1500, n = 0;
+	cout << "Enter x = ";
+	cin >> x;
 
-	// Ввод параметров R и H:
-	cout << "Enter R = ";
-	cin >> R;
+	x = x * PI / 180;
 
-	cout << "Enter H = ";
-	cin >> H;
+	x = cos(x);
 
-	// Объём параллелепипеда:
-	V0 = 4 * R * R * (H + R);
-
-	// Перебор всех точек:
-	for (int i = 0; i <= N; i++)
-	{
-		x = 2 * i * R / N - R;
-		for (int j = 0; j <= N; j++)
-		{
-			y = 2 * j * R / N - R;
-			for (int k = 0; k <= N; k++)
-			{
-				z = k * (H + R) / N;
-
-				// Подсчёт внутренних точек:
-				if (((sqrt(x * x + y * y) / R <= x / H) && (z <= H)) || ((x * x + y * y + (z - H) * (z - H) <= R * R) && (z > H))) n++;
-			}
-		}
-	}
-
-	// Объём тела:
-	V = V0 * n / pow(N + 1,3);
-
-	// Вывод вычисленного и точного значений:
-	cout << "V = " << V << " : " << pi * R * R * H / 3 + 2 * pi * pow(R, 3) / 3 << endl;
+	// Вывод результата:
+	cout << "cos(x) = " << x << endl;
 
 	system("pause");
 	return 0;
