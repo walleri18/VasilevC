@@ -25,7 +25,7 @@ int main(void)
 	// Вычисление ряда:
 	for (int n = 1; n <= N; n++)
 	{
-		summa += ((n + 1) * pow(x, n));
+		summa += (pow(-1, n) * (n + 1) * pow(x, n));
 	}
 
 	// Вывод результата:
