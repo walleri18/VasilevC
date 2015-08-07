@@ -18,10 +18,10 @@ int main(void)
 
 	x = x * PI / 180;
 
-	x = cos(x);
+	x = exp(x);
 
 	// Вывод результата:
-	cout << "cos(x) = " << x << endl;
+	cout << "exp(x) = " << x << endl;
 
 	system("pause");
 	return 0;
