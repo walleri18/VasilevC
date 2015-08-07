@@ -3,25 +3,33 @@
 
 using namespace std;
 
+const int N = 100;
+
 int main(void)
 {
 	setlocale(LC_ALL, "rus");
-
-	// Объявление константы PI:
-	const double PI = 3.1415;
-
 	// Объявление и ввод аргумента x:
-	double x;
+	int x;
 
-	cout << "Enter x = ";
-	cin >> x;
+	while (true)
+	{
+		cout << "Enter x = ";
+		cin >> x;
 
-	x = x * PI / 180;
+		if ((x > -1) && (x < 1)) break;
+	}
 
-	x = exp(x);
+	// Объявление переменные суммы:
+	double summa = 0;
+
+	// Вычисление ряда:
+	for (int n = 1; n <= N; n++)
+	{
+		summa += ((n + 1) * pow(x, n));
+	}
 
 	// Вывод результата:
-	cout << "exp(x) = " << x << endl;
+	cout << "Результат ряда: " << summa << endl;
 
 	system("pause");
 	return 0;
